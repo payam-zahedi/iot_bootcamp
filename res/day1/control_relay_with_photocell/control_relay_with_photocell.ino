@@ -1,5 +1,5 @@
 #define photoCell A0
-#define relle 13
+#define relay 13
 #define threshold 780
 
 int analogVal=0;
@@ -7,7 +7,7 @@ int analogVal=0;
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
-  pinMode(relle,OUTPUT);
+  pinMode(relay,OUTPUT);
 }
 
 void loop() {
@@ -16,9 +16,9 @@ void loop() {
   Serial.println(analogVal);
 
   if(analogVal > threshold){
-    digitalWrite(relle,HIGH);
+    digitalWrite(relay,HIGH);
   }else {
-    digitalWrite(relle,LOW);
+    digitalWrite(relay,LOW);
   }
   delay(100);
 }
